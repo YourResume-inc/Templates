@@ -12,7 +12,7 @@ body {
     padding: 20px;
     background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* да это крутая хрень */
-     border-left: 2px solid #000000;
+     border-left: 2px solid #778899;
     border-radius: 8px;
 
 }
@@ -20,7 +20,7 @@ body {
 .header {
     display: flex;
     align-items: center;
-    border-bottom: 2px solid #000000;
+    border-bottom: 2px solid #778899;
     padding-bottom: 20px;
     margin-bottom: 20px;
 }
@@ -50,7 +50,7 @@ body {
 }
 
 .section-header h2 {
-    background: #000000;
+    background: #778899;
     color: #fff;
     padding: 10px;
     margin: 0;
@@ -59,7 +59,7 @@ body {
 
 .vertical-line {
     width: 2px;
-    background: #000000;
+    background: #778899;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -69,7 +69,7 @@ body {
 
 .paragraph {
     padding-left: 30px;
-    border-left: 2px solid #000000;
+    border-left: 2px solid #778899;
 }
 
 .label {
@@ -85,7 +85,7 @@ body {
 }
 
 .skills-item {
-    background: #000000;
+    background: #778899;
     color: #fff;
     padding: 5px 10px;
     margin: 5px;
