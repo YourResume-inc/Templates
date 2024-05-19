@@ -4,13 +4,14 @@ body{
   min-width: 816px;
 }
 .header {
-  background-color: #FFEBCD;
+  background-color: #000000;
   font-size: 30px;
   padding: 5px;
   margin-top: 10px;
   display: flex;
   align-items: center;
   justify-content: end;
+
 
 }
 
@@ -29,10 +30,15 @@ img{
 table {
   border-collapse: collapse;
   width: 100%;
+   text-align: left;
+}
+
+h4{
+padding: 0px;
 }
 
 tr {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 0px solid #ccc;
 }
 
 td {
@@ -40,23 +46,9 @@ td {
 }
 
 .label {
+
   font-weight: bold;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .study {
   display: inline;
 }
