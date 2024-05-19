@@ -9,19 +9,23 @@
   <body>
 <header class="header">
 
-  <img src="resources/icon.svg"  width="40" height="40"/>
+  <img class="img1" src="resources/icon.svg"  width="40" height="40"/>
 
 </header>
+
+
+<div class="hz">
+  <h2 th:text="${firstName}" class="name">Иванов</h2>
+  <h2 th:text="${secondName}" class="name">Иван</h2>
+  <h2 th:text="${thirdName}" class="name">Иванович</h2>
+
+</div>
+
 <div class="div">
 <div class="half">
-  <div class="name">
-    <h2 th:text="${firstName}" class="name">Иванов</h2>
-    <h2 th:text="${secondName}" class="name">Иван</h2>
-    <h2 th:text="${thirdName}" class="name">Иванович</h2>
-
-  </div>
 
   <div class="paragraph">
+    <img class="img2" src="https://jugglingstore.ru/233-thickbox_default/kolco-dlya-zhonglirovaniya-saturn-40-sm-135-gr.jpg" >
 
     <span class="paragraph-head">Желаемая должность и зарплата</span>
     <br>
@@ -34,7 +38,9 @@
 
   </div>
 
-  <div class = " info paragraph "><span class=" paragraph-head">Образование</span>
+  <div class = " info paragraph ">
+    <img class="img2" src="https://jugglingstore.ru/233-thickbox_default/kolco-dlya-zhonglirovaniya-saturn-40-sm-135-gr.jpg" >
+    <span class=" paragraph-head">Образование</span>
     <hr>
 
     <ul th:each="educate: ${education}" class="courses-list">
@@ -52,7 +58,10 @@
     </ul>
 
   </div>
-  <div class = "info paragraph "><span class=" paragraph-head">Опыт работы</span>
+
+  <div class = "info paragraph ">
+    <img class="img2" src="https://jugglingstore.ru/233-thickbox_default/kolco-dlya-zhonglirovaniya-saturn-40-sm-135-gr.jpg" >
+    <span class=" paragraph-head">Опыт работы</span>
     <hr>
     <ul th:each="Work: ${workExperience}" class="courses-list">
       <li class="courses-item">
@@ -73,8 +82,9 @@
 
 </div>
 
-<div class="half">
+<div class="half second">
   <div class="paragraph">
+    <img class="img2" src="https://jugglingstore.ru/233-thickbox_default/kolco-dlya-zhonglirovaniya-saturn-40-sm-135-gr.jpg" >
     <span class="paragraph-head">Личная информация</span>
     <br>
     <hr>
@@ -88,25 +98,77 @@
     <span th:text="${readyForTravelling}"class="study"> Не готов к командировкам  </span>
   </div>
 
-  <div class="paragraph">
-    <span class="paragraph-head">Контакты</span>
-    <br>
+
+  <div class = "info paragraph ">
+    <img class="img2" src="https://jugglingstore.ru/233-thickbox_default/kolco-dlya-zhonglirovaniya-saturn-40-sm-135-gr.jpg" >
+    <span class=" paragraph-head">Ключенвые навыки</span><br>
     <hr>
-    <ul th:each="Media : ${socialMedia}" class="courses-list">
+    <ul th:each="skill : ${skills}" class="courses-list">
+      <li>
+        <ul th:each="soft: ${softSkillsInformation}" class="courses-list">
+          <li class="courses-item">
+            <span  class="courses-item-title">Soft skills:</span>
+            <div class="courses-item-content">
+              <span th:text="${soft}" class="study"> e</span>
+            </div>
+          </li>
+        </ul>
 
-      <li class="courses-item">
-        <span th:text="${type} + ':'" class="courses-item-title">telegram:</span>
+        <ul th:each="hard: ${hardSkillsInformation}" class="courses-list">
+          <li class="courses-item">
+            <span  class="courses-item-title">Hard skills:</span>
+            <div class="courses-item-content">
+              <span th:text="${hard}" > e</span>
+            </div>
+          </li>
+        </ul>
 
-        <div class="courses-item-content">
-          <span th:text="${url}" >@ivanov</span>
-        </div>
+        <ul th:each="framework: ${workedFrameworksInformation}" class="courses-list">
+          <li class="courses-item">
+            <span  class="courses-item-title">Frameworks:</span>
+            <div class="courses-item-content">
+              <span th:text="${framework}" > e</span>
+            </div>
+          </li>
+        </ul>
+
+        <ul th:each="languages: ${languagesSkillsInformation}" class="courses-list">
+          <li >Языки:</span>
+            <ul th:each="language: ${LanguageSkillsInformatio}" class="courses-list">
+              <li class="courses-item">
+                <span  th:text="${languageName}" class="courses-item-title">англ</span>
+                <div class="courses-item-content">
+                  <span th:text="${knowledgeLevel}" > 1ав</span>
+                </div>
+              </li>
+          </li>
+        </ul>
+
+        <ul th:each="programming: ${workedProgrammingLanguageInformation}" class="courses-list">
+          <li class="courses-item">
+            <span  class="courses-item-title">Языки програмирования</span>
+            <div class="courses-item-content">
+              <span th:text="${programming}" > efgnf</span>
+              <span th:text="${programming}" > efgnf</span>
+              <span th:text="${programming}" > efgnf</span>
+              <span th:text="${programming}" > efgnf</span>
+            </div>
+          </li>
+        </ul>
       </li>
     </ul>
-
-
   </div>
 
 </div>
+
+
+</div>
+<div>
+  <img class="img2" src="https://jugglingstore.ru/233-thickbox_default/kolco-dlya-zhonglirovaniya-saturn-40-sm-135-gr.jpg" >
+  <span class=" paragraph-head ">О себе</span>
+  <hr>
+  <div class="aboutme"><span  th:text="${aboutMe}">  reтостполная занятостполная занятостполная занятостость</span>
+  </div>
 </div>
 </body>
 </html>
