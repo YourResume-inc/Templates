@@ -32,9 +32,9 @@
     <hr>
 
     <span style="font-weight: bold" th:text=" ${desiredRole}">Програмист JAVA</span><br>
-    <span th:text="'Занятость: ' + ${busynessType}"> полная занятость</span><br>
-    <span th:text="'График работы: ' + ${scheduleType}">полный день </span ><br>
-    <span th:text="'Зарплата: ' + ${desiredSalary}">10000 руб </span >
+    <span th:text="'Занятость: ' + ${busynessType}"> Занятость: полная занятость</span><br>
+    <span th:text="'График работы: ' + ${scheduleType}">График работы: полный день </span ><br>
+    <span th:text="'Зарплата: ' + ${desiredSalary}">Зарплата: 10000 руб </span >
 
   </div>
 
@@ -72,7 +72,7 @@
           </div>
           <span style="font-weight: bold">  <span th:text="${kindOfActivity}" class="study"> програмист  </span>
        </span><br>
-          <span style="font-weight: bold" th:text="'Всё ещё работаю: + ${isCurrentlyWorking}" > нет  </span>
+          <span style="font-weight: bold" th:text="'Всё ещё работаю: + ${isCurrentlyWorking}" > Всё ещё работаю: нет  </span>
         </div>
       </li>
     </ul>
@@ -90,10 +90,10 @@
     <hr>
     <span th:text="${genderType}" class="study">Мужчина</span><br>
     <span th:text="'Родился '${dateOfBirth}" class="study" >Родился 15 сентября 1991 года</span><br>
-    <span th:text="'Семейное положение: ' + ${dateOfBirth}"  >семейное положение</span><br>
-    <span th:text="'Есть дети: ' + ${hasChild}"  >нет</span>
-    <span th:text="'Проживает: ' + ${city}"> Москва </span><br>
-    <span th:text="'Гражданство: ' + ${residenceCountry}"> Россия</span >
+    <span th:text="'Семейное положение: ' + ${dateOfBirth}"  >Семейное положение: женат</span><br>
+    <span th:text="'Есть дети: ' + ${hasChild}"  >Есть дети: нет</span><br>
+    <span th:text="'Проживает: ' + ${city}"> Проживает: Москва </span><br>
+    <span th:text="'Гражданство: ' + ${residenceCountry}"> Гражданство: Россия</span >
     <br>
     <span th:text="${readyForTravelling}"class="study"> Не готов к командировкам  </span>
   </div>
@@ -105,32 +105,6 @@
     <hr>
     <ul th:each="skill : ${skills}" class="courses-list">
       <li>
-        <ul th:each="soft: ${softSkillsInformation}" class="courses-list">
-          <li class="courses-item">
-            <span  class="courses-item-title">Soft skills:</span>
-            <div class="courses-item-content">
-              <span th:text="${soft}" class="study"> e</span>
-            </div>
-          </li>
-        </ul>
-
-        <ul th:each="hard: ${hardSkillsInformation}" class="courses-list">
-          <li class="courses-item">
-            <span  class="courses-item-title">Hard skills:</span>
-            <div class="courses-item-content">
-              <span th:text="${hard}" > e</span>
-            </div>
-          </li>
-        </ul>
-
-        <ul th:each="framework: ${workedFrameworksInformation}" class="courses-list">
-          <li class="courses-item">
-            <span  class="courses-item-title">Frameworks:</span>
-            <div class="courses-item-content">
-              <span th:text="${framework}" > e</span>
-            </div>
-          </li>
-        </ul>
 
         <ul th:each="languages: ${languagesSkillsInformation}" class="courses-list">
           <li >Языки:</span>
@@ -138,7 +112,7 @@
               <li class="courses-item">
                 <span  th:text="${languageName}" class="courses-item-title">англ</span>
                 <div class="courses-item-content">
-                  <span th:text="${knowledgeLevel}" > 1ав</span>
+                  <span th:text="${knowledgeLevel}" > 1A</span>
                 </div>
               </li>
           </li>
@@ -148,10 +122,10 @@
           <li class="courses-item">
             <span  class="courses-item-title">Языки програмирования</span>
             <div class="courses-item-content">
-              <span th:text="${programming}" > efgnf</span>
-              <span th:text="${programming}" > efgnf</span>
-              <span th:text="${programming}" > efgnf</span>
-              <span th:text="${programming}" > efgnf</span>
+              <span th:text="${programming}" > JAVA</span>
+              <span th:text="${programming}" > C</span>
+              <span th:text="${programming}" > C++</span>
+              <span th:text="${programming}" >HTML и CSS</span>
             </div>
           </li>
         </ul>
@@ -167,7 +141,7 @@
   <img class="img2" src="https://jugglingstore.ru/233-thickbox_default/kolco-dlya-zhonglirovaniya-saturn-40-sm-135-gr.jpg" >
   <span class=" paragraph-head ">О себе</span>
   <hr>
-  <div class="aboutme"><span  th:text="${aboutMe}">  reтостполная занятостполная занятостполная занятостость</span>
+  <div class="aboutme"><span  th:text="${aboutMe}"> Комуникабельный, активный, планирую развиваться в web програмировании</span>
   </div>
 </div>
 </body>
