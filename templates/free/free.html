@@ -20,30 +20,18 @@
             <h2 th:text="${thirdName}" class="name">Иванович</h2>
         </div>
         <span th:text="{% if email == null%} 'Почта: ' + ${email} {% else %} {% endif %}"></span>
-        <span th:text="${genderType}" class="study">Мужчина</span>
-        <span th:text="'Родился '${dateOfBirth}" class="study">Родился 15 сентября 1991 года</span>
-        <span th:text="'Семейное положение: ' + ${dateOfBirth}">Родился 15 сентября 1991 года</span>
-        <span th:text="'Есть дети: ' + ${hasChild}">нет</span>
+        <span th:text="'Пол: ' + ${genderType}" class="study">Мужчина</span>
+        <span th:text="'Возраст: ' +  ${dateOfBirth}" class="study">Родился 15 сентября 1991 года</span>
+        <span th:text="'Семейное положение: ' + ${dateOfBirth}">Не женат</span>
+        <span th:text="'Дети: ' + ${hasChild}">Нет</span>
     </div>
-</div>
-<div class="paragraph">Контакты:
-    <ul th:each="Media : ${socialMedia}" class="courses-list">
-
-        <li class="courses-item">
-            <span th:text="${type} + ':'" class="courses-item-title">telegram:</span>
-
-            <div class="courses-item-content">
-                <span th:text="${url}">@ivanov</span>
-            </div>
-        </li>
-    </ul>
 </div>
 <div class="paragraph">
     <div class=" info ">
         <span th:text="'Проживает: ' + ${city}"> Москва </span><br>
         <span th:text="'Гражданство: ' + ${residenceCountry}"> Россия</span>
         <br>
-        <span th:text="${readyForTravelling}" class="study"> Не готов к командировкам  </span>
+        <span th:text="'Готов к переезду: ' + ${readyForTravelling}" class="study"> Не готов к командировкам  </span>
 
     </div>
 </div>
@@ -54,7 +42,6 @@
     <div class=" info ">
         <span th:text="'Занятость: ' + ${busynessType}"> полная занятость</span><br>
         <span th:text="'График работы: ' + ${scheduleType}">полный день </span><br>
-        <span th:text="'Зарплата: ' + ${desiredSalary}">10000 руб </span><br>
     </div>
 </div>
 <div class=" info paragraph "><span class=" paragraph-head">Образование</span>
@@ -66,7 +53,7 @@
                 <span th:text="'— ' + ${graduatedDate}" class="courses-item-title">— 3542</span></div>
             <div class="courses-item-content">
                 <div><span th:text="${title}" class="study"> Московский Государственный Университет</span>
-                    <span th:text="$locationCity}" class="study"> Москва</span></div>
+                    <span th:text="${locationCity}" class="study"> Москва</span></div>
                 <span style="font-weight: bold">  <span th:text="${faculty}" class="study"> Факультет автоматики и вычислительной техники </span>
       <span th:text="${speciality}" class="study"> Информатика и вычислительная техника</span> </span>
             </div>
@@ -82,7 +69,7 @@
             <div class="courses-item-content">
                 <div><span th:text="${companyName}" class="study"> ЦФТ</span>
                 </div>
-                <span style="font-weight: bold">  <span th:text="${kindOfActivity}" class="study"> програмист  </span>
+                <span style="font-weight: bold">  <span th:text="'Род деятельности: ' + ${kindOfActivity}" class="study"> програмист  </span>
        </span><br>
                 <span style="font-weight: bold" th:text="'Всё ещё работаю: + ${isCurrentlyWorking}"> нет  </span>
             </div>
@@ -93,38 +80,12 @@
     <hr>
     <ul th:each="skill : ${skills}" class="courses-list">
         <li>
-            <ul th:each="soft: ${softSkillsInformation}" class="courses-list">
-                <li class="courses-item">
-                    <span class="courses-item-title">Soft skills:</span>
-                    <div class="courses-item-content">
-                        <span th:text="${soft}" class="study"> e</span>
-                    </div>
-                </li>
-            </ul>
-
-            <ul th:each="hard: ${hardSkillsInformation}" class="courses-list">
-                <li class="courses-item">
-                    <span class="courses-item-title">Hard skills:</span>
-                    <div class="courses-item-content">
-                        <span th:text="${hard}"> e</span>
-                    </div>
-                </li>
-            </ul>
-
-            <ul th:each="framework: ${workedFrameworksInformation}" class="courses-list">
-                <li class="courses-item">
-                    <span class="courses-item-title">Frameworks:</span>
-                    <div class="courses-item-content">
-                        <span th:text="${framework}"> e</span>
-                    </div>
-                </li>
-            </ul>
-
             <ul th:each="languages: ${languagesSkillsInformation}" class="courses-list">
-                <li>Языки:</span>
-                    <ul th:each="language: ${LanguageSkillsInformatio}" class="courses-list">
+                <li>
+                    <span class="courses-item-title">Языки</span>
+                    <ul th:each="language: ${languages}" class="courses-list">
                         <li class="courses-item">
-                            <span th:text="${languageName}" class="courses-item-title">англ</span>
+                            <span th:text="${language.languageName}" class="courses-item-title">англ</span>
                             <div class="courses-item-content">
                                 <span th:text="${knowledgeLevel}"> 1ав</span>
                             </div>
@@ -132,13 +93,18 @@
                 </li>
             </ul>
 
-            <ul th:each="programming: ${workedProgrammingLanguageInformation}" class="courses-list">
-                <li class="courses-item">
+            <ul th:each="programmingLanguages: ${workedProgrammingLanguageInformation}" class="courses-list">
+                <li>
                     <span class="courses-item-title">Языки програмирования</span>
-                    <div class="courses-item-content">
-                        <span th:text="${programming}"> e</span>
-                    </div>
+                    <ul th:each="language : ${programmingLanguages}" class="courses-list">
+                        <li class="courses-item">
+                            <div class="courses-item-content">
+                                <span th:text="${programming.languageName}">C++</span>
+                            </div>
+                        </li>
+                    </ul>
                 </li>
+
             </ul>
         </li>
     </ul>
@@ -147,7 +113,7 @@
 <div class="paragraph"><span class=" paragraph-head">О себе</span>
     <hr>
     <div class=" info paragraph ">
-        <span th:text="${aboutMe}"> полная занятполная занятостполная занятостполная занятостполная занятостполная занятостполная занятостполная занятостполная занятостость</span>
+        <span th:text="'О себе: ' + ${aboutMe}"> полная занятполная занятостполная занятостполная занятостполная занятостполная занятостполная занятостполная занятостполная занятостость</span>
     </div>
     <div class=" info  paragraph">
         <span th:text="'Личные качества: ' + ${personalQualities}"> полная занятостполная занятостполная занятостполная занятостполная занятостполная занятостполная занятость</span>
