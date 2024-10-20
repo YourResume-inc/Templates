@@ -19,6 +19,8 @@ img{
   margin-right: 15px;
 }
 
+.name{ display: inline;
+}
 .study {
   display: inline;
 }
@@ -47,9 +49,16 @@ img{
   gap: 10px;
 }
 
+.pop{
+display: inline;
+white-space: nowrap;
+margin: 0;
+}
+
 .courses-item-title {
   box-sizing: content-box;
-
+  margin: 0;
+  font-size: 15px;
 }
 
 .courses-content{
@@ -80,5 +89,6 @@ img{
 .info {
   box-sizing: content-box;
 }
-.paragraph{margin-bottom:20px;
+.paragraph{
+margin-bottom:20px;
 }
